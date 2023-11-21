@@ -1,0 +1,38 @@
+\documentclass[10pt, a5paper, draft, oneside]{memoir}
+
+\setlrmargins{0.8in}{*}{*}
+\setulmarginsandblock{1in}{1in}{}
+\fixthelayout
+
+\setlength{\parindent}{1em}
+\linespread{1.1}
+
+\usepackage{hyperref}
+\hypersetup{
+  pdftitle={The Horse Stealers},
+  pdfauthor={Anton Chekov},
+  hidelinks,
+  pdfcreator={XeLaTeX}}
+\urlstyle{same}
+
+\usepackage[british]{babel}
+\selectlanguage{british}
+
+\usepackage[autostyle=false, style=english]{csquotes}
+
+\input{macros}
+
+\title{The Horse Stealers}
+\author{Anton Chekov}
+\date{\today}
+
+\begin{document}
+\frontmatter
+\maketitle
+\mainmatter
+
+\input{main}
+
+\backmatter
+\end{document}
+
