@@ -1,23 +1,35 @@
 PROJECT = horse
-OUTDIR = ../out
-TMPOUT = ../out
-PDF_OUTPUT = $(OUTDIR)/$(PROJECT).pdf
-TEX_INPUT = src/$(PROJECT).tex src/*.tex
-DRAFT_INPUT = src/$(PROJECT)-draft.tex
+VERSION = 0.0.0
 
-all: pdf
+FINAL_INPUT = src/$(PROJECT).tex src/*.tex
+FINAL_OUTDIR = ${FINAL_BUILD_FOLDER}/Writing/Fiction/Short\ Stories
+FINAL_OUTPUT = $(FINAL_OUTDIR)/$(PROJECT).pdf
 
-pdf: $(PDF_OUTPUT)
+DRAFT_INPUT = src/$(PROJECT)-draft.tex src/*.tex
+DRAFT_OUTDIR = ${DRAFT_BUILD_FOLDER}/Writing/Fiction/Short\ Stories
+DRAFT_OUTPUT = $(DRAFT_OUTDIR)/$(PROJECT)-draft.pdf
 
-clean: $(TEX_INPUT)
-	latexmk -c -cd -outdir=$(OUTDIR) -xelatex $<
+.PHONY: all draft pdf watch clean
 
-$(PDF_OUTPUT): $(TEX_INPUT)
-	latexmk -cd -outdir=$(OUTDIR) -xelatex $<;
-	latexmk -c -cd -outdir=$(OUTDIR) -xelatex $<
+all: draft
+
+draft: $(DRAFT_OUTPUT)
+
+pdf: $(FINAL_OUTPUT)
+
+clean: $(DRAFT_INPUT)
+	latexmk -c -cd -outdir=$(DRAFT_OUTDIR) -xelatex $<
+
+$(FINAL_OUTPUT): $(FINAL_INPUT)
+	latexmk -cd -outdir=$(FINAL_OUTDIR) -jobname=%A-$(VERSION) -xelatex $<;
+	latexmk -c -cd -outdir=$(FINAL_OUTDIR) -jobname=%A-$(VERSION) -xelatex $<
+
+$(DRAFT_OUTPUT): $(DRAFT_INPUT)
+	latexmk -cd -outdir=$(DRAFT_OUTDIR) -xelatex $<;
+	latexmk -c -cd -outdir=$(DRAFT_OUTDIR) -xelatex $<
 
 watch: $(DRAFT_INPUT)
-	latexmk -cd -outdir=$(TMPOUT) -pvc -xelatex $(word 1, $^)
+	latexmk -cd -outdir=$(DRAFT_OUTDIR) -pvc -xelatex $<
 
 hooks:
 	find .git/hooks -type l -exec rm {} \; && find .githooks -type f -exec ln -sf ../../{} .git/hooks/ \;
@@ -25,4 +37,3 @@ hooks:
 
 count:
 	wc src/main.tex > count.txt 
-
