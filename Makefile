@@ -1,12 +1,13 @@
 PROJECT = horse
 VERSION = 0.0.0
+SUBFOLDER = Fiction/Short\ Stories
 
 FINAL_INPUT = src/$(PROJECT).tex src/*.tex
-FINAL_OUTDIR = ${FINAL_BUILD_FOLDER}/Writing/Fiction/Short\ Stories
+FINAL_OUTDIR = ${WRITING_RELEASE_BUILD_FOLDER}/$(SUBFOLDER)
 FINAL_OUTPUT = $(FINAL_OUTDIR)/$(PROJECT).pdf
 
 DRAFT_INPUT = src/$(PROJECT)-draft.tex src/*.tex
-DRAFT_OUTDIR = ${DRAFT_BUILD_FOLDER}/Writing/Fiction/Short\ Stories
+DRAFT_OUTDIR = ${WRITING_DRAFT_BUILD_FOLDER}/$(SUBFOLDER)
 DRAFT_OUTPUT = $(DRAFT_OUTDIR)/$(PROJECT)-draft.pdf
 
 .PHONY: all draft pdf watch clean
@@ -36,4 +37,4 @@ hooks:
 	.git/hooks/post-commit  \;
 
 count:
-	wc src/main.tex > count.txt 
+	wc src/main.tex > wc.txt 
