@@ -33,8 +33,7 @@ watch: $(DRAFT_INPUT)
 	latexmk -cd -outdir=$(DRAFT_OUTDIR) -pvc -xelatex $<
 
 hooks:
-	find .git/hooks -type l -exec rm {} \; && find .githooks -type f -exec ln -sf ../../{} .git/hooks/ \;
-	.git/hooks/post-commit  \;
+	git config --local core.hooksPath ${HOOKSDIR}
 
 count:
 	wc src/main.tex > wc.txt 
