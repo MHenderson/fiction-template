@@ -22,8 +22,8 @@ clean: $(DRAFT_INPUT)
 	latexmk -c -cd -outdir=$(DRAFT_OUTDIR) -xelatex $<
 
 $(FINAL_OUTPUT): $(FINAL_INPUT)
-	latexmk -cd -outdir=$(FINAL_OUTDIR) -jobname=%A-$(VERSION) -xelatex $<;
-	latexmk -c -cd -outdir=$(FINAL_OUTDIR) -jobname=%A-$(VERSION) -xelatex $<
+	latexmk -cd -outdir=$(FINAL_OUTDIR) -jobname=%A-v$(VERSION) -xelatex $<;
+	latexmk -c -cd -outdir=$(FINAL_OUTDIR) -jobname=%A-v$(VERSION) -xelatex $<
 
 $(DRAFT_OUTPUT): $(DRAFT_INPUT)
 	latexmk -cd -outdir=$(DRAFT_OUTDIR) -xelatex $<;
