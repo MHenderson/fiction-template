@@ -19,6 +19,7 @@ Here is the process for creating a new project.
 2. Run init.sh script.
   
   ```
+  cd <PROJECT_NAME>
   bash init.sh
   ```
   
