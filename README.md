@@ -8,7 +8,7 @@ You need XeLaTeX and latexmk.
 
 ## Installation
 
-Here is the process for creating a new short story LaTeX repo.
+Here is the process for creating a new project.
 
 1. Clone repo
   
@@ -16,10 +16,11 @@ Here is the process for creating a new short story LaTeX repo.
   git clone git@github.com:MHenderson/fiction-template.git <PROJECT_NAME>
   ```
   
-2. Run init.sh script (n.b. if TITLE and AUTHOR have spaces then they should be inside double quotes).
+2. Run init.sh script.
   
   ```
-  bash init.sh PROJECT_NAME TITLE AUTHOR
+  cd <PROJECT_NAME>
+  bash init.sh
   ```
   
 ## Usage
