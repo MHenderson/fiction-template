@@ -14,33 +14,26 @@ Here is the process for creating a new short story LaTeX repo.
   git clone git@github.com:MHenderson/fiction-template.git <PROJECT_NAME>
   ```
   
-2. Remove history and init new repo.
+2. Run init.sh script
+  
+  ```
+  bash init.sh PROJECT_NAME
+  ```
+  
+6. Edit title and author in both `src/project-name-draft.tex` and `src/project-name.tex`.
+  
+7. Remove history and init new repo.
   
   ```
   cd <PROJECT_NAME>
   rm -rf .git
   git init
   ```
-  
-3. Update PROJECT variable in Makefile.
-
-4. Remove old LaTeX source files and add new empty files.
-  
-  ```
-  make init
-  ```
-  
-6. Edit title and author in both `src/project-name-draft.tex` and `src/project-name.tex`.
-  
-7. Edit the `README` to remove everything but the title. Replace the title with the short story title.
-  
-8. Update count by running `make count`.
-  
-9. Commit everything.
+8. Commit everything.
   
   ```
   git add .  
-  git commit -m "initial commit"
+  git commit -m "Initial commit based on fiction-template v0.2.0."
   ```
 
 ## Setup
