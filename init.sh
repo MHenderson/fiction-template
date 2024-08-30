@@ -1,15 +1,20 @@
 #!/bin/bash
 
-sed -i -e "s/horse/$1/g" Makefile
-mv src/horse-draft.tex src/$1-draft.tex
-mv src/horse.tex src/$1.tex
-sed -i -e "s/The Horse Stealers/$2/g" src/$1-draft.tex
-sed -i -e "s/Anton Chekov/$3/g" src/$1-draft.tex
-sed -i -e "s/The Horse Stealers/$2/g" src/$1.tex
-sed -i -e "s/Anton Chekov/$3/g" src/$1.tex
+read -p "Enter project name: " project
+read -p "Enter title: " title
+read -p "Enter author: " author
+sed -i -e "s/horse/$project/g" Makefile
+mv src/horse-draft.tex src/$project-draft.tex
+mv src/horse.tex src/$project.tex
+sed -i -e "s/The Horse Stealers/$title/g" src/$project-draft.tex
+sed -i -e "s/Anton Chekov/$author/g" src/$project-draft.tex
+sed -i -e "s/The Horse Stealers/$title/g" src/$project.tex
+sed -i -e "s/Anton Chekov/$author/g" src/$project.tex
+rm src/$project.tex-e
+rm src/$project-draft.tex-e
 rm src/main.tex
 touch src/main.tex
-echo "# "$1 > README.md
+echo "# "$project > README.md
 make count
 rm -rf .git
 rm -rf .github
