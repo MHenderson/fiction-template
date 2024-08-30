@@ -29,12 +29,6 @@ $(DRAFT_OUTPUT): $(DRAFT_INPUT)
 	latexmk -cd -outdir=$(DRAFT_OUTDIR) -xelatex $<;
 	latexmk -c -cd -outdir=$(DRAFT_OUTDIR) -xelatex $<
 
-init:
-	mv src/horse-draft.tex src/$(PROJECT)-draft.tex
-	mv src/horse.tex src/$(PROJECT).tex
-	rm src/main.tex
-	touch src/main.tex
-
 watch: $(DRAFT_INPUT)
 	latexmk -cd -outdir=$(DRAFT_OUTDIR) -pvc -xelatex $<
 
