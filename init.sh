@@ -4,6 +4,7 @@ read -p "Enter project name: " project
 read -p "Enter title: " title
 read -p "Enter author: " author
 sed -i -e "s/horse/$project/g" Makefile
+rm Makefile-e
 mv src/horse-draft.tex src/$project-draft.tex
 mv src/horse.tex src/$project.tex
 sed -i -e "s/The Horse Stealers/$title/g" src/$project-draft.tex
