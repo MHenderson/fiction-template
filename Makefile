@@ -40,4 +40,4 @@ count:
 
 install:
 	sudo apt update
-	sudo apt install texlive texlive-science texlive-latex-extra texlive-xetex latexmk
+	sudo apt install texlive texlive-xetex latexmk
