@@ -3,6 +3,8 @@
 read -p "Enter project name: " project
 read -p "Enter title: " title
 read -p "Enter author: " author
+git clone git@github.com:MHenderson/fiction-template.git $project
+cd $project
 sed -i -e "s/horse/$project/g" Makefile
 rm Makefile-e
 mv src/horse-draft.tex src/$project-draft.tex
