@@ -4,26 +4,18 @@ A template for PDF documents using XeLaTeX and latexmk.
 
 ## Dependencies
 
-You need XeLaTeX and latexmk.
+* XeLaTex (`apt install texlive texlive-xetex`)
+* latemk (`apt install latexmk`)
 
-## Installation
-
-Here is the process for creating a new project.
-
-1. Clone repo
-  
-  ```
-  git clone git@github.com:MHenderson/fiction-template.git <PROJECT_NAME>
-  ```
-  
-2. Run init.sh script.
-  
-  ```
-  cd <PROJECT_NAME>
-  bash init.sh
-  ```
-  
 ## Usage
+
+### Create a new project
+
+Run the `init.sh` script to create a new project.
+
+```
+curl https://raw.githubusercontent.com/MHenderson/fiction-template/main/init.sh | bash
+```
 
 ### Building the draft PDF
 
