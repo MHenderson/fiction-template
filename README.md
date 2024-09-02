@@ -14,7 +14,7 @@ A template for PDF documents using XeLaTeX and latexmk.
 Run the `init.sh` script to create a new project.
 
 ```
-curl https://raw.githubusercontent.com/MHenderson/fiction-template/main/init.sh | bash
+bash -c "$(curl https://raw.githubusercontent.com/MHenderson/fiction-template/main/init.sh)"
 ```
 
 ### Building the draft PDF
