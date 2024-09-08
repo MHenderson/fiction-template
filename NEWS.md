@@ -1,5 +1,11 @@
 # fiction-template (development version)
 
+# fiction-template (0.3.0)
+
+* Project initialisation script (init.sh) added.
+* texlive-science and texlive-latex-extra packages removed from the install Make target.
+* README updated with project initialisation documentation.
+
 # fiction-template (0.2.0)
 
 * Dependency installation (make install).
