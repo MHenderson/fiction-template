@@ -25,5 +25,5 @@ rm NEWS.md
 git init
 git switch --create main
 git add --all -- :!init.sh
-git commit -m "Initial commit based on fiction-template v0.2.0."
+git commit -m "Initial commit based on fiction-template v0.3.0."
 rm init.sh
